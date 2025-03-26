@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Verification</title>
+    <script>
+        // Function to check if passwords match
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+
+            // If passwords don't match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false; // Prevent form submission
+            }
+
+            // If passwords match
+            alert("Passwords match! Form can be submitted.");
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h1>Password Verification Form</h1>
+    <form onsubmit="return validatePassword()">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
